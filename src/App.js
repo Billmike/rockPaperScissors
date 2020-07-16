@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Components
 import {
@@ -48,6 +48,7 @@ function App() {
 
   useEffect(() => {
     !!playerChoice && iconSelect();
+    // eslint-disable-next-line
   }, [playerChoice]);
 
   return (
