@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer, useEffect } from 'react';
 
 // Components
 import {
@@ -12,10 +12,43 @@ import {
 // Images
 import Logo from './assets/images/logo-bonus.svg';
 import './App.scss';
+import { rules } from './utils/rules';
+
+const CHOICES = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 
 function App() {
   const [isModalOpen, setModalState] = useState(false);
   const [isPlaying, setPlayingState] = useState(false);
+  const [status, setStatus] = useState({
+    score: 0,
+    userWins: false,
+    aiChoice: '',
+  });
+  const [playerChoice, setPlayerChoice] = useState('');
+
+  const setChoice = (iconName) => {
+    setPlayerChoice(iconName);
+    setPlayingState(true);
+  };
+
+  const iconSelect = () => {
+    const filteredChoices = CHOICES.filter((ch) => ch !== playerChoice);
+    const randomIndex = Math.floor(
+      Math.random() * (filteredChoices.length - 0) + 0
+    );
+    const aiChoice = filteredChoices[randomIndex];
+
+    const userWins = rules[playerChoice][aiChoice];
+    setStatus({
+      score: userWins ? status.score + 1 : status.score - 1,
+      userWon: userWins,
+      aiChoice: aiChoice,
+    });
+  };
+
+  useEffect(() => {
+    !!playerChoice && iconSelect();
+  }, [playerChoice]);
 
   return (
     <div className='container'>
@@ -23,12 +56,16 @@ function App() {
         <div className='app-title-wrapper'>
           <img src={Logo} alt='Rock, Paper, Scissors, Lizard, Spock' />
         </div>
-        <Score />
+        <Score status={status} />
       </div>
       {isPlaying ? (
-        <GameChoice onPress={() => setPlayingState(false)} />
+        <GameChoice
+          status={status}
+          choice={playerChoice}
+          onPress={() => setPlayingState(false)}
+        />
       ) : (
-        <Options onPress={() => setPlayingState(true)} />
+        <Options setChoice={setChoice} onPress={() => setPlayingState(true)} />
       )}
       <Button onPress={() => setModalState(true)} />
       <ModalComponent

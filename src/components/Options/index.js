@@ -12,21 +12,21 @@ import { isSmallScreen } from '../../utils/checkScreen';
 // styles
 import './style.scss';
 
-const Options = ({ onPress }) => {
+const Options = ({ onPress, setChoice }) => {
   return (
     <div>
       <div className='options-container'>
         <div className='bg-pentagon'>
           <img src={BGPentagon} alt='Pentagon' />
         </div>
-        <Option name='scissors' onPress={onPress} />
+        <Option name='scissors' onPress={() => setChoice('scissors')} />
         <div className='row-wrapper'>
           <Option
             name='spock'
             style={{ marginRight: isSmallScreen ? 100 : 200 }}
-            onPress={onPress}
+            onPress={() => setChoice('spock')}
           />
-          <Option name='paper' onPress={onPress} />
+          <Option name='paper' onPress={() => setChoice('paper')} />
         </div>
         <div
           className='row-wrapper'
@@ -35,9 +35,9 @@ const Options = ({ onPress }) => {
           <Option
             name='lizard'
             style={{ marginRight: isSmallScreen ? 60 : 100 }}
-            onPress={onPress}
+            onPress={() => setChoice('lizard')}
           />
-          <Option name='rock' onPress={onPress} />
+          <Option name='rock' onPress={() => setChoice('rock')} />
         </div>
       </div>
     </div>
