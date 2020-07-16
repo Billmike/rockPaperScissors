@@ -1,0 +1,99 @@
+.playing-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  margin-bottom: 100px;
+
+  .choice-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .who-picked {
+      text-align: center;
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: #fff;
+      font-family: 'Barlow Semi Condensed', sans-serif;
+    }
+  }
+
+  .play-again-wrapper {
+    margin-right: 100px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+
+    .result {
+      margin: 0;
+      font-size: 35px;
+      text-transform: uppercase;
+      color: #fff;
+      font-family: 'Barlow Semi Condensed', sans-serif;
+    }
+
+    .play-again {
+      height: 35px;
+      margin-top: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-family: 'Barlow Semi Condensed', sans-serif;
+      letter-spacing: 2px;
+      color: hsl(229, 25%, 31%);
+    }
+  }
+}
+
+.small-screen {
+  .small-screen-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+
+    .choice-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .who-picked {
+        text-align: center;
+        letter-spacing: 2px;
+        color: #fff;
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        margin: 0;
+      }
+    }
+  }
+  .play-again-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .result {
+      margin: 0;
+      font-size: 35px;
+      text-transform: uppercase;
+      color: #fff;
+      font-family: 'Barlow Semi Condensed', sans-serif;
+    }
+
+    .play-again {
+      background-color: white;
+      width: 140px;
+      height: 35px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-family: 'Barlow Semi Condensed', sans-serif;
+      letter-spacing: 2px;
+      color: hsl(229, 25%, 31%);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+  }
+}

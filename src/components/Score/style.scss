@@ -1,0 +1,28 @@
+.score-container {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  border-radius: 5px;
+
+  .score-text {
+    margin: 0px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: hsl(229, 64%, 46%);
+    letter-spacing: 2px;
+    font-size: 16px;
+  }
+
+  .score-value {
+    text-align: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: hsl(229, 25%, 31%);
+    font-size: 50px;
+    margin: 0;
+  }
+}
