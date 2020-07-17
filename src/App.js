@@ -43,6 +43,7 @@ function App() {
       score: userWins ? status.score + 1 : status.score - 1,
       userWon: userWins,
       aiChoice: aiChoice,
+      playerChoice: '',
     });
   };
 

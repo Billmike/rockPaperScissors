@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     .who-picked {
       text-align: center;
@@ -17,6 +18,37 @@
       letter-spacing: 2px;
       color: #fff;
       font-family: 'Barlow Semi Condensed', sans-serif;
+      z-index: 400;
+    }
+
+    .absolute-outer-div {
+      position: absolute;
+      background: hsl(214, 27%, 33%);
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      align-self: center;
+      margin-top: 25px;
+      border: 1px solid hsl(214, 31%, 24%);
+    }
+
+    .absolute-second-div {
+      position: absolute;
+      width: 195px;
+      height: 195px;
+      background: hsl(214, 35%, 28%);
+      border-radius: 50%;
+      margin-top: 25px;
+      border: 1px solid hsl(214, 47%, 23%);
+    }
+
+    .absolute-third-div {
+      position: absolute;
+      background: hsl(214, 42%, 26%);
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      margin-top: 25px;
     }
   }
 

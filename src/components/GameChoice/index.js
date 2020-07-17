@@ -31,6 +31,13 @@ const GameChoice = ({ onPress, choice, status }) => {
   ) : (
     <div className='playing-wrapper'>
       <div className='choice-wrapper'>
+        {status.userWon && (
+          <>
+            <div className='absolute-third-div' />
+            <div className='absolute-second-div' />
+            <div className='absolute-outer-div' />
+          </>
+        )}
         <p className='who-picked'>You Picked</p>
         <Option name={choice} />
       </div>
@@ -41,6 +48,13 @@ const GameChoice = ({ onPress, choice, status }) => {
         </button>
       </div>
       <div className='choice-wrapper'>
+        {!status.userWon && (
+          <>
+            <div className='absolute-third-div' />
+            <div className='absolute-second-div' />
+            <div className='absolute-outer-div' />
+          </>
+        )}
         <p className='who-picked'>The House Picked</p>
         {!!status.aiChoice && <Option name={status.aiChoice} />}
       </div>
