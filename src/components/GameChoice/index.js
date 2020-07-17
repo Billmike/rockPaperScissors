@@ -13,10 +13,24 @@ const GameChoice = ({ onPress, choice, status }) => {
     <div className='small-screen'>
       <div className='small-screen-wrapper'>
         <div className='choice-wrapper'>
+          {status.userWon && (
+            <>
+              <div className='absolute-third-div' />
+              <div className='absolute-second-div' />
+              <div className='absolute-outer-div' />
+            </>
+          )}
           <Option name={choice} />
           <p className='who-picked'>You Picked</p>
         </div>
         <div className='choice-wrapper'>
+          {!status.userWon && (
+            <>
+              <div className='absolute-third-div' />
+              <div className='absolute-second-div' />
+              <div className='absolute-outer-div' />
+            </>
+          )}
           {!!status.aiChoice && <Option name={status.aiChoice} />}
           <p className='who-picked'>The House Picked</p>
         </div>
